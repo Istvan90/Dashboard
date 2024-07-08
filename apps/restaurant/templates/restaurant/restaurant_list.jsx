@@ -1,4 +1,5 @@
 import "./tailwind.css"
+import "./Style/restaurantList.css"
 
 const restaurantList = () => {
   const { id } = useParams()
@@ -16,43 +17,38 @@ const restaurantList = () => {
   }, [id]);
 
   <>
-    <div class="row">
+    <div className="row">
       <form method="GET" action="{% url 'search_restaurant' %}">
         <div class="mb-3">
           <input type="text" class="form-control" name="q" placeholder="Search by name" />
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
       </form>
-      {restaurant && (<>
-        <h2 class="mt-5">Results</h2>
-        <ul class="list-group">
+    </div>
+    <h2 class="mt-5">Resultat</h2>
+
+    {
+      restaurant.map(restaurant =>
+        <div class="row">
           <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
-              {restaurant.main_image && (
-                <img src="{{ restaurant.main_image.url }}" class="card-img-top" alt="Image de {{ restaurant.name }}" />
-              )}
-
+              <img src={restaurant.main_image} class="card-img-top"
+                alt="Image de Le Bistro Parisien" />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{restaurant.name}</h5>
                 <p class="card-text">
                   {restaurant.description}<br />
-                  {restaurant.address}<br />
-                  <strong>Note: {restaurant.rating}</strong>
+                  <strong>Note: {restaurant.rating}  </strong>
                 </p>
-                <div class="mt-auto">
-                  <a class="btn btn-primary">Voir les détails</a>
-                </div>
               </div>
             </div>
           </div>
-        </ul>
-      </>
-      )}
-      <div class="col-md-12">
-        <p>Aucun restaurant trouvé.</p>
-      </div>
-    </div>
+        </div>
+      )
+    }
+
   </>
+
 }
 
 export default restaurantList

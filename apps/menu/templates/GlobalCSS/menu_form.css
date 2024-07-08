@@ -19,11 +19,11 @@
     color: var(--primary--yellow);
 }
 
-body img {
+.body-image {
     object-fit: cover;
 }
 
-main {
+.main-form {
     line-height: 1.6;
     color: #14213d;
     max-width: 800px;
@@ -48,19 +48,15 @@ h2 {
     margin-bottom: 20px;
 }
 
-label {
+.label-menu-form {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #34495e;
+    margin-top: 40px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-input[type="datetime-local"],
-select {
+.form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -68,12 +64,7 @@ select {
     font-size: 16px;
 }
 
-
-label {
-    margin-top: 40px;
-}
-
-button[type="submit"] {
+.submit-menu-form {
     background-color: var(--primary-blue);
     color: white;
     padding: 12px 20px;

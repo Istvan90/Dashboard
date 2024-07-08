@@ -54,7 +54,7 @@ def dish_create(request):
             return redirect('dish-list')
     else:
         form = DishForm()
-    return render(request, 'dish/dish_form.html', {'form': form})
+    return render(request, 'dish/dish_form.jsx', {'form': form})
 
 def dish_update(request, pk):
     dish = get_object_or_404(Dish, pk=pk)
@@ -65,7 +65,7 @@ def dish_update(request, pk):
             return redirect('dish-list')
     else:
         form = DishForm(instance=dish)
-    return render(request, 'dish/dish_form.html', {'form': form})
+    return render(request, 'dish/dish_form.jsx', {'form': form})
 
 def dish_delete(request, pk):
     dish = get_object_or_404(Dish, pk=pk)

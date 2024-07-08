@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
     --primary-color: #FF5722;
     --secondary-color: #FFC107;
@@ -19,12 +15,12 @@
     padding: 0;
 }
 
-body {
+.body-delete {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -40,12 +36,12 @@ body {
     text-align: center;
 }
 
-h1 {
+.confirm-delete {
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-p {
+.paragraph-delete {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }

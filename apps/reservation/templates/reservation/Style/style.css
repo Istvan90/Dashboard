@@ -1,4 +1,4 @@
-body {
+.reserve-body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
@@ -7,6 +7,7 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .confirmation-card {
     background-color: white;
     border-radius: 8px;
@@ -15,23 +16,28 @@ body {
     text-align: center;
     max-width: 400px;
 }
-h2 {
+
+.confirmation-title {
     color: #4CAF50;
     margin-bottom: 1rem;
 }
-p {
+
+.confirmation-message {
     color: #333;
     margin-bottom: 1.5rem;
 }
-h3 {
+
+.ticket-title {
     color: #2196F3;
     margin-bottom: 1rem;
 }
-img {
+
+.card-img-top {
     max-width: 100%;
     height: auto;
     margin-bottom: 1.5rem;
 }
+
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -41,6 +47,7 @@ img {
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
+
 .btn:hover {
     background-color: #1976D2;
 }

@@ -1,3 +1,5 @@
+import "./Style/reservation_confirmation.css"
+
 const reservationConfirmation = () => {
   const { id } = useParams();
   const [reservation, setReservation] = useState(null);
@@ -12,25 +14,25 @@ const reservationConfirmation = () => {
       });
   }, [id]);
 
-  <div class="container">
-    <h1>Confirmation de Réservation</h1>
-    <p>Votre réservation pour {reservation.number_of_people} personnes à {reservation.restaurant.name}
-      a été enregistrée.</p>
-    <p>
-      <strong>Date:</strong> {reservation.reservation_date}
+  <div className="container">
+    <h1 className="reservation-title">Confirmation de Réservation</h1>
+    <p className="reservation-info">Votre réservation pour 4 personnes à Le Petit Bistro a été enregistrée.</p>
+    <p className="reservation-detail">
+      <strong>Date:</strong> 15 juin 2023
     </p>
-    <p>
-      <strong>Heure:</strong> {reservation.reservation_time}
+    <p className="reservation-detail">
+      <strong>Heure:</strong> 20:00
     </p>
-    <p>
-      <strong>Demandes spéciales:</strong> {reservation.special_requests}
+    <p className="reservation-detail">
+      <strong>Demandes spéciales:</strong> Table près de la fenêtre si possible
     </p>
-    <p>
-      <strong>Statut:</strong> {reservation.get_status_display}
+    <p className="reservation-status">
+      <strong>Statut:</strong> En attente de confirmation
     </p>
-    <a href="{% url 'reservation-ticket' reservation.pk %}">Confirmer</a>
-    <a href="{% url 'reservation-pending' reservation.pk %}">Annuler</a>
+    <a className="reservation-action" href="{% url 'reservation-ticket' reservation.pk %}">Confirmer</a>
+    <a className="reservation-action" href="{% url 'reservation-pending' reservation.pk %}">Annuler</a>
   </div>
+
 }
 
 export default reservationConfirmation;

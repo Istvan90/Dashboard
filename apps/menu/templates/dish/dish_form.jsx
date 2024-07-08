@@ -30,33 +30,33 @@ const dish_form = () => {
 
     <body>
 
-        <img class="w-full h-60"
+        <img className="w-full h-60 body-image"
             src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/159551170/original/e26afa7ff301ffe84af4e762998334479fca5604/design-a-professional-restaurant-or-hotel-menu-design-within-24-hours.png"
             alt="Image de couverture" />
 
-        <main>
-            <h1 class="text-3xl">Ajout de nouveau Menue</h1>
+        <main className="main-form">
+            <h1 className="text-3xl add-new">Ajout de nouveau Menue</h1>
 
-            <section class="MainsSection mt-8">
+            <section className="MainsSection mt-8">
                 <form onSubmit={handleSubmit} method="post" id="reservationForm">
-                    <div class="form-group">
-                        <label htmlFor="table-number">Nom Plat</label>
+                    <div className="form-group">
+                        <label className="label-menu-form" htmlFor="table-number">Nom Plat</label>
                         <input onChange={handleChange} type="text" id="table-number" name="name" required />
                     </div>
-                    <div class="form-group">
-                        <label htmlFor="Capacity">Description</label>
+                    <div className="form-group">
+                        <label className="label-menu-form" htmlFor="Capacity">Description</label>
                         <input onChange={handleChange} type="text" id="Capacity" name="Description" required />
                     </div>
-                    <div class="form-group">
-                        <label htmlFor="Capacity">Prix</label>
+                    <div className="form-group">
+                        <label className="label-menu-form" htmlFor="Capacity">Prix</label>
                         <input onChange={handleChange} type="text" id="Capacity" name="Prix" required />
                     </div>
-                    <div class="form-group">
-                        <label htmlFor="Capacity">Image</label>
-                        <input onChange={handleChange} type="folder" id="Capacity" name="Categorie" required />
+                    <div className="form-group">
+                        <label className="label-menu-form" htmlFor="Capacity">Image</label>
+                        <input onChange={handleChange} type="file" id="Capacity" name="Image" required />
                     </div>
               
-                    <button type="submit" class="w-2/4 mt-8">Enregistrer</button>
+                    <button type="submit" className="w-2/4 mt-8">Enregistrer</button>
                 </form>
             </section>
 

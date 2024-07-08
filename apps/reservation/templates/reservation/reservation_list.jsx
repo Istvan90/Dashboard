@@ -1,4 +1,6 @@
-const reservationList = () => {
+import "./Style/reservation_list.css"
+
+export function ReservationList() {
   const { id } = useParams();
   const [reservation, setReservation] = useState([]);
 
@@ -12,12 +14,11 @@ const reservationList = () => {
       });
   }, [id]);
 
-  {
-    reservation &&
-
-      <div class="container">
+  return (
+    reservation ? (
+      <div className="container">
         <h1>Mes Réservations</h1>
-        <table class="table table-striped">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th>Restaurant</th>
@@ -38,24 +39,21 @@ const reservationList = () => {
               <td>{reservation.get_status_display}</td>
               <td>{reservation.special_requests}</td>
               <td>
-                <a href="{% url 'reservation-cancel' reservation.id %}" class="btn btn-danger">Annuler</a>
-                <a href="{% url 'reservation-update' reservation.id %}" class="btn btn-success">Modifier</a>
+                <a href="{% url 'reservation-cancel' reservation.id %}" className="btn btn-danger">Annuler</a>
+                <a href="{% url 'reservation-update' reservation.id %}" className="btn btn-success">Modifier</a>
 
-                <a href="{% url 'reservation-ticket' reservation.id %}" class="btn btn-primary">Confirmer</a>
+                <a href="{% url 'reservation-ticket' reservation.id %}" className="btn btn-primary">Confirmer</a>
 
-                <a href="{% url 'reservation-ticket' reservation.id %}" class="btn btn-outline-primary">Voir le ticket</a>
+                <a href="{% url 'reservation-ticket' reservation.id %}" className="btn btn-outline-primary">Voir le ticket</a>
 
               </td>
             </tr>
 
           </tbody>
         </table>
-
       </div>
-  }
-  {!reservation &&
-    <p>Vous n'avez pas de reservation</p>
-  }
+    ) : (
+      <p>Vous n'avez aucune reservation :(</p>
+    )
+  );
 }
-
-export default reservationList
